@@ -1,0 +1,36 @@
+import java.util.*;
+public class Zellers_Equation
+{
+    public static void main(String [] args)
+    {
+        int h;//day of the week
+        int q;//day of the month
+        int m;//month
+        int k;//century
+        int j;//year of the century
+        int y;//year
+
+        System.out.println("enter year :");//ask user for year
+        Scanner S =new Scanner(System.in);
+        y=S.nextInt();
+        System.out.println("month 1-12 :");//ask user for month
+        Scanner o =new Scanner(System.in);
+        m=S.nextInt();
+        System.out.println("day of month :");//ask user for month
+        Scanner p =new Scanner(System.in);
+        q=S.nextInt();
+        j = (y/100);//century equation
+        k = (y%100);//year of the century equation
+        h = ((q + (26*(m+1)/10) + k + (k/4) + (j/4)  +(5*j))%7);//Zeller's congruence algorithm equation
+        System.out.println(h);//prints value of above equation
+        switch(h)//basically the if statement but a switch case function
+        {
+            case 0:System.out.println("Saturday");break;
+            case 1:System.out.println("Sunday");break;
+            case 2:System.out.println("Monday");break;
+            case 3:System.out.println("Tuesday");break;
+            case 4:System.out.println("Wednesday");break;
+            case 5:System.out.println("Thursday");break;
+            case 6:System.out.println("Friday");break;
+        }
+    }
